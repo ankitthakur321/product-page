@@ -33,6 +33,12 @@ After visiting ths url the project will start.
 
 The products are being filtered on the basis of categories only and also you can sort products. So, categories field along with sort field will work from filter part.
 
+
+## Screenshots
+
+![App Screenshot](assets/images/Output.png)
+
+
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
