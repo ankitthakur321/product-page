@@ -18,6 +18,7 @@ After visiting ths url the project will start.
 ## Features
 
 - Filtering the products based on the category
+- Sorting the products either ascending or descending order
 
 
 
@@ -30,7 +31,7 @@ After visiting ths url the project will start.
 
 ## Appendix
 
-The products are being filtered on the basis of categories only. So only categories field will work from filter part.
+The products are being filtered on the basis of categories only and also you can sort products. So, categories field along with sort field will work from filter part.
 
 ## License
 

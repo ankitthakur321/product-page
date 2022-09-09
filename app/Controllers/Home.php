@@ -13,8 +13,15 @@ class Home extends BaseController
     {
         if($this->request->getVar('category'))
         {
-            $cat = $this->request->getVar('category');
-            $url = $cat !="all"?"https://fakestoreapi.com/products/category/$cat":"https://fakestoreapi.com/products";
+            if($this->request->getVar('sort'))
+            {
+                $srt = $this->request->getVar('sort');
+                $url = "https://fakestoreapi.com/products?sort=$srt";
+            }
+            else {
+                $cat = $this->request->getVar('category');
+                $url = $cat != "all" ? "https://fakestoreapi.com/products/category/$cat" : "https://fakestoreapi.com/products";
+            }
         }
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);

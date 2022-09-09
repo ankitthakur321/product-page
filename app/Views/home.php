@@ -140,6 +140,26 @@
                                     </div>
                                     <div class="filter-block">
                                         <div class="collection-collapse-block open">
+                                            <h6 class="collapse-block-title">Sort Products</h6>
+                                            <div class="collection-collapse-block-content">
+                                                <div class="collection-brand-filter">
+                                                    <div class="form-check collection-filter-checkbox">
+                                                        <input type="checkbox" class="form-check-input sort"
+                                                            id="ascSort" name="sort" value="asc" <?=isset($_GET['sort'])?($_GET['sort']=="asc"?"checked":""): "" ?>>
+                                                        <label class="form-check-label" for="ascSort">Ascending</label>
+                                                    </div>
+                                                    <div class="form-check collection-filter-checkbox">
+                                                        <input type="checkbox" name="sort"
+                                                            class="form-check-input sort" id="descSort"
+                                                            value="desc" <?=isset($_GET['sort'])?($_GET['sort']=="desc"?"checked":""): "" ?> >
+                                                        <label class="form-check-label" for="descSort">Descending</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="filter-block">
+                                        <div class="collection-collapse-block open">
                                             <h6 class="collapse-block-title">price range</h6>
                                             <div class="collection-collapse-block-content">
                                                 <div class="wrapper">
@@ -378,6 +398,18 @@
             window.location.href = onlyUrl + "?category=" + amnVal;
         }
     });
+
+    $('.sort').click(function () {
+            if ($(this).prop("checked") == false) {
+                var onlyUrl = window.location.href.replace(window.location.search, '?category=all');
+                window.location.href = onlyUrl;
+            } else {
+                var originalURL = window.location.href;
+                var onlyUrl = window.location.href.replace(window.location.search, '');
+                var amnVal = $(this).val();
+                window.location.href = onlyUrl + "?category=all&sort=" + amnVal;
+            }
+        });
     </script>
 </body>
 
